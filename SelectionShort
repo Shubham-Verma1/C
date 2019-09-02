@@ -1,0 +1,70 @@
+#include<stdio.h>
+#include<conio.h>
+  void selectionsort(int[],int) ;
+  void input(int a[],int n);
+  void output(int a[],int n);
+int count=0;
+void main()
+   {
+    int n,a[100];
+    clrscr();
+    printf("number of elements:");
+    scanf("%d",&n);
+    input(a,n);
+    selectionsort(a,n);
+    output(a,n);
+    printf("\n\nValue of count is %d", count);
+    getch();
+    }
+void selectionsort(int a[], int n)
+{
+  int i,j,loc,temp,min;
+  count++;
+     for(i=0;i<n;i++)
+     {
+     count++;
+	min=a[i];        count++;
+	loc=i;   count++;
+	count++;
+	 for(j=i+1;j<n;j++)
+	 {
+	  count++;
+	  if(min>a[j])
+	   {
+	   count++;
+	   min=a[j];
+	   loc=j;
+	   }
+	 }
+       count++;
+       if(loc!=i)
+       {
+       count++;
+       temp=a[i];   count++;
+       a[i]=a[loc];         count++;
+       a[loc]=temp;                 count++;
+       }
+       }
+ }
+
+ void input(int a[], int n)
+ {
+ int i;
+ for(i=0;i<n;i++)
+  {
+    printf("\nA[%d] :",i);
+    scanf("%d",&a[i]);
+  }
+  }
+
+  void output(int a[], int n)
+
+ {
+ int i;
+  for(i=0;i<n;i++)
+   {
+   printf("\nA[%d]=%d",i,a[i]);
+   }
+   }
+
+
